@@ -105,6 +105,12 @@ module Discordrb
       "<Webhook name=#{@name} id=#{@id}>"
     end
 
+    # The URL of this webhook. As if copied from the client directly.
+    # @return [String] the direct URL of this webhook.
+    def url
+      "https://canary.discordapp.com/api/webhooks/#{@id}/#{@token}"
+    end
+
     # Utility function to know if the webhook was requested through a webhook token, rather than auth.
     # @return [true, false] whether the webhook was requested by token or not.
     def token?
